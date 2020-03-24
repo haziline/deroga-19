@@ -1,0 +1,28 @@
+div(class="row")
+  div(class="col-sm frow")
+    p Mme / M : #{fullname}
+
+div(class="row")
+  div(class="col-sm frow")
+    p Né(e) le : #{birthdate}
+
+div(class="row")
+  div(class="col-sm frow")
+    p Demeurant : #{address}
+
+include deroga-raisons.pug
+
+div(class="row")
+  div(class="col-sm-4")
+  div(class="col-sm")
+    p Fait à : #{doneAt}
+  div(class="col-sm")
+    p Le : #{doneOn}
+
+- var signatureSrc = signature;
+- var qrCodeSrc = qrCode;
+
+div(class="row" id="signature-img")
+  div(class="col-sm-4")
+  div(class="col-sm-2") Signature
+    img(src=signatureSrc)

@@ -1,0 +1,83 @@
+extends templates/layout.pug
+
+block append head
+  script(src="js/signature-pad.min.js")
+
+block content
+  div(class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false" data-animation="true" data-delay="3000")
+    div(class="toast-header")
+      span(class="badge badge-danger") Erreurs de validation
+      boutton(type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close")
+        span(aria-hidden="true") &times;
+    div(class="toast-body" id="error")
+
+  include templates/deroga-header.pug
+
+    form(class="form-horizontal" id="deroga-19" action="/qrcode" method="post")
+      div(class="form-row")
+        div(class="col-sm-2 frow")
+          label(class="col-form-label" for="fullname") Mme / M :
+        div(class="col-sm frow")
+          input(class="form-control" type="text" name="fullname" id="fullname" placeholder="Nom et Prénom" required)
+        div(class="col-sm frow")
+
+      div(class="form-row")
+        div(class="col-sm-2 frow")
+          label(class="col-form-label") Né(e) le :
+        div(class="col-sm frow")
+          select(class="form-control" name="day" id="day" required)
+            option(value="0" disabled selected) Jour
+            - for(var day = 1; day < 32; day++) {
+              option(value=day) #{day}
+            - }
+        div(class="col-sm frow")
+          select(class="form-control" name="month" id="month" required)
+            option(value="0" disabled selected) Mois
+            each month in months
+              option(value=month) #{month}
+        div(class="col-sm frow")
+          select(class="form-control" name="year" id="year" required)
+            option(value="0" disabled selected) Année
+            - for(var year = 1900; year < 2021; year++) {
+              option(value=year) #{year}
+            - }
+
+      div(class="form-row")
+        div(class="col-sm-2 frow")
+          label(class="col-form-label") Demeurant :
+        div(class="col-sm frow")
+          input(class="form-control" type="text" name="street" id="street" placeholder="N°/Nom rue" required)
+        div(class="col-sm frow")
+          input(class="form-control" type="number" name="zipcode" id="zipcode" placeholder="Code postal" required)
+        div(class="col-sm frow")
+          input(class="form-control" type="text" name="city" id="city" placeholder="Ville" required)
+
+      include templates/deroga-raisons.pug
+
+      div(class="form-row")
+        div(class="col-sm-4 frow")
+        div(class="col-sm frow")
+          label(class="form-check-label" for="doneAt") Fait à
+          input(class="form-control" name="doneAt" type="text" id="doneAt" required)
+        div(class="col-sm frow")
+          label(class="form-check-label" for="doneOn") Le
+          input(class="form-control" name="doneOn" type="text" id="doneOn" readonly)
+
+      div(class="form-group row")
+        div(class="col-sm-4 frow")
+        div(class="col-sm-2 frow")
+          div(id="signature-pad" class="signature-pad")
+            div(class="signature-pad--body")
+              canvas(id="signature" style="touch-action: none;" width="200" height="100")
+              input(type="text" name="signature" id="signatureData" hidden)
+            div(class="signature-pad--footer")
+              div(class="description") Signez au dessus
+            div(class="signature-pad--actions")
+              div
+                button(id="clear" type="button" class="btn btn-outline-danger btn-sm button clear" data-action="clear") Supprimer
+
+      div(class="form-group row")
+        div(class="col-sm center")
+          button(id="save" type="submit" class="btn btn-outline-success btn-lg") Enregistrer
+
+  script(src="js/app.js" data=months)

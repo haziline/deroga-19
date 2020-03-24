@@ -1,0 +1,11 @@
+extends templates/layout.pug
+
+block content
+  div(class="jumbotron")
+    div(class="container fheight")
+      div(class="row center fheight")
+        div(class="col-md-12 align-self-center")
+          div(class="error-template")
+            h1 Oops!
+            h2 #{code}
+            h4 We are sorry, an error has occured: #{msg}
