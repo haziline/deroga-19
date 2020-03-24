@@ -4,14 +4,109 @@ block content
   div(class="jumbotron")
     div(class='container-fluid')
       div(class="row")
-        div(class="col-sm center")
-          h1 Deroga-19 c'est quoi ?
+        div(class="col-sm")
+          h2 Introduction
           p
-            | Deroga-19 c'est un POC d'une solution numérique sous forme de site web permettant
-            | aux personnes le souhaitant de créer leur ATTESTATION DE DÉPLACEMENT DÉROGATOIRE
-            | en toute simplicité et sans exposer leurs données.
-            | Aussi elle facilitera les contrôles de police de cette dernière, car aucun contact
-            | n'est requis, juste un scan du QR code.
+            | Dans le contexte que nous vivons actuellement, le confinement est une mesure
+            | nécessaire pour stopper la propagation du virus Covid-19.
+          p
+            | Pour appliquer les mesures prises par le gouvernement et s’assurer du respect de
+            | #[a(target="_blank" href="https://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000041728476&categorieLien=id") l’article]
+            | 1er du décret du 16 mars 2020 portant la réglementation des
+            | déplacements dans le cadre de la lutte contre la propagation du virus Covid-19,
+            | l’édition de
+            | #[a(target="_blank" href="https://www.interieur.gouv.fr/Actualites/L-actu-du-Ministere/Attestation-de-deplacement-derogatoire-et-justificatif-de-deplacement-professionnel") l'attestation]
+            | est maintenant obligatoire.
+          p
+            | Cependant, nous avons relevé certaines contraintes liées à la préparation de ces
+            | attestations.
+          p
+            | On peut par exemple se poser la question si le fait de transmettre et reprendre des
+            | attestations papiers aux agents de sécurité reste-t-il toujours recommandé.
+          p
+            | Autre constat concernant l’impact écologique, non négligeable,
+            | que représente la multiplication de ces attestations à usage unique.
+          p
+            | Si comme nous, vous êtes sensibles à ces problématiques,
+            | nous vous avons trouvé la solution alternative : Deroga-19
+
+      <br/>
+
       div(class="row")
-        div(class="col-sm center")
-          h1 Pourquoi ?
+        div(class="col-sm")
+          h2 Deroga-19 c'est quoi ?
+          p
+           | Deroga-19 c’est une initiative de solution numérique gratuite de création de
+           | dérogation. Sous forme de site web permettant aux personnes, le souhaitant, de
+           | créer leurs ATTESTATIONS DE DÉPLACEMENTS DÉROGATOIRE en toute simplicité et sans
+           | exposer leurs données.
+          p
+           | Aussi, elle facilitera les contrôles de police de cette dernière,
+           | aucun contact n’est requis, il suffit à l’agent de sécurité de scanner à l’aide
+           | de son smartphone, le QR code généré par Deroga-19.
+
+      <br/>
+
+      div(class="row")
+        div(class="col-sm")
+          h2 Comment ça marche ?
+          p
+            | L’utilisateur peut remplir le formulaire disponible sur le lien présent dans
+            | l’onglet Dérogation sur la barre de navigation, et puis signer dans la case
+            | dédiée en bas de page. La signature peut se faire en utilisant la souris ou le
+            | doigt sur mobile. Le remplissage de la date et de l’heure est automatique.
+            | Pour finir, il faut cliquer sur enregistrer.
+          p
+            | Si le programme détecte une erreur, votre enregistrement ne sera pas validé
+            | et un message d’erreur apparaît afin que l’utilisateur puisse compléter les
+            | informations manquantes. Une fois que tout est validé, l’utilisateur est redirigé
+            | vers une nouvelle page contenant l’attestation accompagnée de son QR code.
+            | Les attestations peuvent être imprimées, mais nous recommandons vivement aux
+            | utilisateurs de les stocker sur leurs téléphones, soit en gardant le lien ouvert,
+            | soit en prenant des captures d’écran.
+          p
+            | En pratique lors d’un contrôle, l’utilisateur pourra à bras tendu, montrer aux
+            | forces de l’ordre l’attestation ou le QR code contenant le lien de l’attestation
+            | en question.
+          P
+            | Les agents pourront ainsi scanner le QR code avec l’appareil photo de leur smartphone
+            | ou avec une application de lecture de QR code.
+
+      <br/>
+
+      div(class="row")
+        div(class="col-sm")
+          h2 Un process 100% sécurisé
+          p
+            | Nous vous informons que vos données personnelles ne sont pas stockées.
+          p
+            | Pour le fonctionnement de la solution, Deroga-19 stocke temporairement et uniquement
+            | l’image de la signature qui expire chaque jour à minuit.
+          p
+            | Les informations personnelles de l’utilisateur sont encryptées (AES-256-CBC)
+            | avec une clé privée et encodées dans un QR code qui ne vit que dans la page web
+            | du client et non dans le serveur, ce qui veut dire qu’aucune information ne peut
+            | être affichée si l’on ne scanne pas le QR code.
+          p
+            | La solution est en opensource et le code peut être vérifié sur
+            | #[a(target="_blank" href="https://github.com/haziline/deroga-19") github]
+
+      <br/>
+
+      div(class="row")
+        div(class="col-sm")
+          h2 Notre objectif
+          p
+            | A travers cette démarche, nous voulons agir à notre échelle et participer aux
+            | menées face à cette crise sanitaire mondiale. Le confinement est une mesure
+            | indispensable et le fait de faciliter les contrôles de nos déplacements nous semble
+            | être utile à cette cause.
+          p
+            | Notre solution permet un contrôle “sans contact”. Elle permet aussi de réduire
+            | considérablement le gaspillage non nécessaire de millions de feuilles en papier.
+          p
+            | Nous avons aussi besoin de vous, car notre projet est un projet participatif,
+            | toute aide sera donc la bienvenue. Pour l’instant, nous nous concentrons notre
+            | solution sur le territoire français mais nous travaillerons, par la suite,
+            | à l’adapter aux lois dérogatoires des autres pays qui connaissent malheureusement
+            | le même sort que la France.

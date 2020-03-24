@@ -25,4 +25,10 @@
 .jumbotron, .fheight {
   height: 100% !important;
   width: 100%;
+  margin-bottom: 0;
+}
+
+.page-footer {
+  background-color: #343A40;
+  color: white;
 }

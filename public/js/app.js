@@ -88,7 +88,7 @@ function isDataValid() {
   return true;
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+$(document).ready(function () {
   $('#doneOn').val(getDateTime());
   // signature pad
   var canvas = document.querySelector('#signature');
