@@ -1,4 +1,21 @@
 
+input[type="radio"][disabled] {
+  border-color: #212529;
+}
+
+input[type="radio"] {
+  border: 1px solid #212529;
+  border-radius: 8px;
+  height: 16px;
+  width: 16px;
+  -webkit-appearance: none;
+}
+
+input[type="radio"]:checked, input[type=checkbox]:focus {
+  background-color: #212529;
+  outline: none;
+}
+
 .center {
   text-align: center;
 }
@@ -20,6 +37,17 @@
   top: 10px;
   right: 10px;
   z-index: 999999;
+}
+
+#save {
+  color: #2980b9;
+  border-color: #2980b9;
+}
+
+#save:hover {
+  color: white;
+  border-color: #2980b9;
+  background-color: #2980b9; 
 }
 
 .jumbotron, .fheight {
@@ -45,7 +73,7 @@
   font-weight: bold;
 }
 
-.form-check-input:disabled~.form-check-label {
+.form-check-label {
   color: #212529 !important;
 }
 
