@@ -63,6 +63,7 @@ module.exports = async (ctx, next) => {
       doneOn,
       signature,
       qrCode,
+      disabled: true,
     });
   } catch (err) {
     ctx.err = err;

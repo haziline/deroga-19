@@ -7,7 +7,7 @@ div(class="row")
 
 div(class="form-group row")
   div(class="col-sm form-check")
-    input(class="form-check-input" name="raison" type="radio" value="1" checked=(raison === "1" ? "checked" : undefined))
+    input(class="form-check-input" name="raison" type="radio" value="1" checked=(raison === "1" ? "checked" : undefined) disabled=(disabled ? "disabled" : undefined))
     label(class="form-check-label" for="c1")
       | déplacements entre le domicile et le lieu d’exercice de l’activité professionnelle, <br/>
       | lorsqu’ils sont indispensables à l’exercice d’activités ne pouvant être organisées <br/>
@@ -16,27 +16,27 @@ div(class="form-group row")
 
 div(class="form-group row")
   div(class="col-sm form-check")
-    input(class="form-check-input" name="raison" type="radio" value="2" checked=(raison === "2" ? "checked" : undefined))
+    input(class="form-check-input" name="raison" type="radio" value="2" checked=(raison === "2" ? "checked" : undefined) disabled=(disabled ? "disabled" : undefined))
     label(class="form-check-label" for="c2")
       | déplacements pour effectuer des achats de première nécessité dans des <br/>
       | établissements autorisés (liste sur gouvernement.fr).
 
 div(class="form-group row")
   div(class="col-sm form-check")
-    input(class="form-check-input" name="raison" type="radio" value="3" checked=(raison === "3" ? "checked" : undefined))
+    input(class="form-check-input" name="raison" type="radio" value="3" checked=(raison === "3" ? "checked" : undefined) disabled=(disabled ? "disabled" : undefined))
     label(class="form-check-label" for="c3")
       | déplacements pour motif de santé.
 
 div(class="form-group row")
   div(class="col-sm form-check")
-    input(class="form-check-input" name="raison" type="radio" value="4" checked=(raison === "4" ? "checked" : undefined))
+    input(class="form-check-input" name="raison" type="radio" value="4" checked=(raison === "4" ? "checked" : undefined) disabled=(disabled ? "disabled" : undefined))
     label(class="form-check-label" for="c4")
       | déplacements pour motif familial impérieux, pour l’assistance aux personnes <br/>
       | vulnérables ou la garde d’enfants.
 
 div(class="form-group row")
   div(class="col-sm form-check")
-    input(class="form-check-input" name="raison" type="radio" id="c5" value="5" checked=(raison === "5" ? "checked" : undefined))
+    input(class="form-check-input" name="raison" type="radio" id="c5" value="5" checked=(raison === "5" ? "checked" : undefined) disabled=(disabled ? "disabled" : undefined))
     label(class="form-check-label" for="c5")
       | déplacements brefs, à proximité du domicile, liés à l’activité physique individuelle <br/>
       | des personnes, à l’exclusion de toute pratique sportive collective, et aux besoins <br/>

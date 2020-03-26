@@ -24,6 +24,7 @@ module.exports = async (ctx, next) => {
       doneAt,
       doneOn,
       signature,
+      disabled: true
     });
   } catch (err) {
     ctx.err = err;
