@@ -29,10 +29,26 @@
 }
 
 .page-footer {
-  background-color: #343A40;
   color: white;
+}
+
+.bg-cred {
+  background-color: #e74c3c;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgb(255, 255, 255, .6);
+}
+
+.active {
+  color: white !important;
+  font-weight: bold;
 }
 
 .form-check-input:disabled~.form-check-label {
   color: #212529 !important;
+}
+
+.info {
+  font-size: 12px;
 }

@@ -13,7 +13,7 @@ const schema = Joi.object({
   street: Joi.string().max(128).required(),
   zipcode: Joi.string().max(64).required(),
   city: Joi.string().max(64).required(),
-  raison: Joi.any().valid(...['1', '2', '3', '4', '5']).required(),
+  raison: Joi.any().valid(...['1', '2', '3', '4', '5', '6', '7']).required(),
   doneAt: Joi.string().max(128).required(),
   doneOn: Joi.string().max(64).required(),
   signature:  Joi.string().required(),
