@@ -1,5 +1,9 @@
 extends templates/layout.pug
 
+block append head
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous")
+
 block content
   include templates/deroga-header.pug
 
@@ -10,3 +14,9 @@ block content
     div(class="row")
       div(class="col-sm center")
         img(class="img-fluid img-thumbnail" src=qrCodeSrc)
+
+    div(class="row")
+      div(class="col-sm center")
+        button(id="download" class="btn btn-outline-success btn-lg") Télécharger le PDF
+
+  script(src="js/pdf.js")
