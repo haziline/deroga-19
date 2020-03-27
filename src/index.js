@@ -45,7 +45,11 @@ app.use(async (ctx, next) => {
 
     throw ctx.err;
   } catch (err) {
+    debug(err);
     err.status = err.statusCode || err.status || 500;
+    if (err.status === 500) {
+      err.message = 'Internal server error';
+    }
     return ctx.render('error.pug', { code: err.status, msg: err.message });
   }
 });

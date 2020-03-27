@@ -1,0 +1,37 @@
+.jumbotron {
+  font-size: 10px;
+  padding: 5px 20px;
+}
+
+.form-row, .form-group, .frow {
+  margin-bottom: 5px;
+}
+
+#info {
+  font-size: 8px;
+}
+
+#title {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  font-size: 10px;
+}
+
+#title > h4 {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+#body {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  font-size: 10px;
+}
+
+#qrcode {
+  position: relative;
+  top: 200px;
+  left: 20px;
+}

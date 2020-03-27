@@ -1,9 +1,10 @@
-$(document).ready(function () {
-  $('#download').on('click', function () {
-    var doc = new jsPDF('p', 'pt', 'a4');
+var pdfBuffer = document.currentScript.getAttribute('data') || '';
 
-    doc.addHTML($('#deroga-content'), function() {
-      doc.save('Derogation.pdf');
-    });
+$(document).ready(function () {
+  var btn = $('#download');
+  
+  btn.on('click', function () {
+    btn.attr('download', 'Derogation.pdf');
+    btn.attr('href', 'data:application/octet-stream;base64,' + pdfBuffer);
   });
 });

@@ -1,6 +1,7 @@
 const QRCode = require('qrcode');
 const Joi = require('@hapi/joi');
 const { v4 } = require('uuid');
+const pdf = require('../modules/pdf');
 const { encrypt } = require('../modules/crypto');
 const redisClient = require('../modules/redis');
 const { app: { baseURL, months } } = require('../modules/config');
@@ -54,7 +55,7 @@ module.exports = async (ctx, next) => {
 
     ctx.status = 200;
 
-    return ctx.render('qrcode.pug', {
+    const res = {
       fullname,
       birthdate,
       address,
@@ -63,8 +64,13 @@ module.exports = async (ctx, next) => {
       doneOn,
       signature,
       qrCode,
+      baseURL,
       disabled: true,
-    });
+    };
+
+    const pdfBuffer = Buffer.from(await pdf.createPDF('../views/qrcode.pug', Object.assign({ pdf: true, hidden: true }, res))).toString('base64');
+
+    return ctx.render('qrcode.pug', Object.assign({ pdfBuffer }, res));
   } catch (err) {
     ctx.err = err;
     await next();

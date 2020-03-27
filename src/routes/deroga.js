@@ -1,3 +1,4 @@
+const { app: { baseURL } } = require('../modules/config');
 const { decrypt } = require('../modules/crypto');
 const redisClient = require('../modules/redis');
 
@@ -24,7 +25,8 @@ module.exports = async (ctx, next) => {
       doneAt,
       doneOn,
       signature,
-      disabled: true
+      baseURL,
+      disabled: true,
     });
   } catch (err) {
     ctx.err = err;
